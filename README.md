@@ -23,3 +23,13 @@ La informacion de como crear las bases de datos y sus respectivas tablas se incl
 - MongoDB (Base de Datos NoSQL)
 - Kafka (Gestor de Mensajería)
 - Github (Repositorio para proyecto y Configuraciones de micorservicios)
+
+## DockerHub Repository
+![image](https://github.com/DaniBonica001/pay-app-spring-microservices/assets/72984897/b1a57c25-936f-4527-b7c7-fc7a9eaf4b85)
+
+## Steps to deployment
+
+
+
+
+
