@@ -1,0 +1,73 @@
+version: "3"
+
+services:
+
+  postgres:
+    image: postgres:12
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: db_invoice
+    networks:
+      - distribuidos
+
+#  mysql:
+#    image: mysql
+#    container_name: mysql
+#    ports:
+#      - "3306:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: mysql
+#      MYSQL_DATABASE: db_operation
+#    networks:
+#      - distribuidos
+#
+#  mongodb:
+#    image: mongo
+#    container_name: mongodb
+#    ports:
+#      - "27017:27017"
+#    networks:
+#      - distribuidos
+
+  app-invoice:
+    image: daboca/app-invoice-service:v1
+    platform: linux/amd64
+    container_name: app-invoice
+    ports:
+      - "8006:8006"
+    networks:
+      - distribuidos
+    depends_on:
+      - postgres
+
+
+#  app-pay:
+#    image: daboca/app-pay-service:v1
+#    platform: linux/amd64
+#    container_name: app-pay
+#    ports:
+#      - "8010:8010"
+#    networks:
+#      - distribuidos
+#    depends_on:
+#      - mysql
+#
+#
+#  app-transaction:
+#    image: daboca/app-transaction-service:v1
+#    platform: linux/amd64
+#    container_name: app-transaction
+#    ports:
+#      - "8082:8082"
+#    networks:
+#      - distribuidos
+#    depends_on:
+#      - mongodb
+
+networks:
+  distribuidos:
+    external: true
