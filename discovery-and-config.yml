@@ -13,7 +13,7 @@ services:
     command: agent -server -bootstrap-expect 1 -ui -data-dir /tmp -client=0.0.0.0
 
   app-config:
-    image: daboca/app-config-service:v1
+    image: daboca/app-config-service:v2
     platform: linux/amd64
     container_name: app-config
     ports:

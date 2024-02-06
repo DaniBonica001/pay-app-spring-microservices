@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  app-invoice:
+    image: daboca/app-invoice-service:v2
+    platform: linux/amd64
+    container_name: app-invoice
+    ports:
+      - "8006:8006"
+    networks:
+      - distribuidos
+
+
+  app-pay:
+    image: daboca/app-pay-service:v3
+    platform: linux/amd64
+    container_name: app-pay
+    ports:
+      - "8010:8010"
+    networks:
+      - distribuidos
+
+
+  app-transaction:
+    image: daboca/app-transaction-service:v3
+    platform: linux/amd64
+    container_name: app-transaction
+    ports:
+      - "8082:8082"
+    networks:
+      - distribuidos
+
+networks:
+  distribuidos:
+    external: true
