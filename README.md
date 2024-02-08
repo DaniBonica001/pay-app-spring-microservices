@@ -117,6 +117,23 @@ To execute the script is needed an operating system basen on Unix/Linux or we ca
 chmod +x deploy.sh
 ./deploy.sh
 ```
+
+## 4. Load Data in Postgres database
+![img_4.png](img_4.png)
+
+## 5. Test the microservices
+![img.png](img.png)
+
+### App-Invoice
+![img_1.png](img_1.png)
+
+![img_5.png](img_5.png)
+
+### App-Pay
+![img_2.png](img_2.png)
+
+
+
   
     
 
