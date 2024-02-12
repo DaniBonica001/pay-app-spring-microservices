@@ -2,7 +2,7 @@ version: "3"
 
 services:
   app-invoice:
-    image: daboca/app-invoice-service:v4
+    image: daboca/app-invoice-service:v6
     platform: linux/amd64
     container_name: app-invoice
     ports:
@@ -12,7 +12,7 @@ services:
 
 
   app-pay:
-    image: daboca/app-pay-service:v4
+    image: daboca/app-pay-service:v5
     platform: linux/amd64
     container_name: app-pay
     ports:
