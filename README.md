@@ -129,6 +129,10 @@ chmod +x deploy.sh
 
 ![img_5.png](images/img_5.png)
 
+### App-Invoice Fixed
+A payment is made and the invoice 1 is updated
+![img.png](images/img.png)
+
 ### App-Pay
 ![img_2.png](images/img_2.png)
 ![img_6.png](images/img_6.png)

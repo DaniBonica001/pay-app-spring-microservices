@@ -28,7 +28,7 @@ public class PayService {
             throw new RuntimeException("No se encontró la factura");
         }else {
             if (pay.getAmount() > Double.parseDouble(debtAmount) ) {
-                throw new RuntimeException("La cantidad del pago es mayor que la cantidad de la factura.");
+                throw new RuntimeException("La cantidad del pago es mayor que l a cantidad de la factura.");
             }
         }
 
