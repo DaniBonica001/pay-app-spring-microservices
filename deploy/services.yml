@@ -12,7 +12,7 @@ services:
 
 
   app-pay:
-    image: daboca/app-pay-service:v5
+    image: daboca/app-pay-service:v6
     platform: linux/amd64
     container_name: app-pay
     ports:
