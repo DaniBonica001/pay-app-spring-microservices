@@ -118,10 +118,13 @@ chmod +x deploy.sh
 ./deploy.sh
 ```
 
-## 4. Load Data in Postgres database
+## 4. Evidence of Consul
+![img10.png](images/img10.png)
+
+## 5. Load Data in Postgres database
 ![img_4.png](images/img_4.png)
 
-## 5. Test the microservices
+## 6. Test the microservices
 ![img.png](images/img.png)
 
 ### App-Invoice
