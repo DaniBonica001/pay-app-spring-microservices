@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e58ac9-48bb-4cd4-ac8f-0df6e36357dd" name="Changes" comment="Updated README.md with evidence" />
+    <list default="true" id="a7e58ac9-48bb-4cd4-ac8f-0df6e36357dd" name="Changes" comment="Updated README.md with evidence">
+      <change afterPath="$PROJECT_DIR$/deploy/loadbalancer-apigw.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/loadbalancerdockerhub.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/57444651-fba5-4800-bcfe-7a9d783647da.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/57444651-fba5-4800-bcfe-7a9d783647da.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appgw/gateway.config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/appgw/gateway.config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appgw/system.config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/appgw/system.config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haproxy/haproxy.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/haproxy/haproxy.cfg" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +63,9 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2cHcYaGwOLezVSbItBgThlDezoH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,12 +77,16 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Documents/sd-workshop1&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/danielabonilla/Desktop/Daniela/Icesi/Distribuidos/pay-app-spring-microservices&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -74,8 +97,25 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
       <recent name="C:\Users\danie\Desktop\Daniela\Icesi\Distribuidos\pay-app-spring-microservices\images" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AppPayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="app-pay.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.aforo.AppPayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-53826d6a" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -87,6 +127,9 @@
       <updated>1707771995952</updated>
       <workItem from="1707772001070" duration="6586000" />
       <workItem from="1707860558906" duration="937000" />
+      <workItem from="1708986246990" duration="117000" />
+      <workItem from="1708986371671" duration="6368000" />
+      <workItem from="1709003601910" duration="5161000" />
     </task>
     <task id="LOCAL-00001" summary="Updated logic behind microservices to do the payment">
       <option name="closed" value="true" />

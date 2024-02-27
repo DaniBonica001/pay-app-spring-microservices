@@ -21,3 +21,7 @@ docker-compose -f storage.yml up -d
 sleep 10
 echo 'Deploying services'
 docker-compose -f services.yml up -d
+
+sleep 10
+echo 'Creating load balancer and api gateway'
+docker-compose -f loadbalancer-apigw.yml up -d

@@ -147,6 +147,211 @@ A payment is made and the invoice 1 is updated
 ![img_7.png](images/img_7.png)
 
 
+## 7. Load Balancer and Api Gateway
+
+  ### 7.1 Configuration of Load Balancer: haproxy.cfg
+The .cfg file is needed to configure the path of the microservices from the load balancer.
+  ```Dockerfile
+    defaults
+      timeout connect 5s
+      timeout client 1m
+      timeout server 1m
+
+    frontend stats
+       bind *:1936
+       mode http
+       stats uri /
+       stats show-legends
+       no log
+    
+    frontend http_front
+       bind *:80
+       mode http
+       acl url_config path_beg /config
+       use_backend config_back if url_config
+       acl url_invoice path_beg /invoice
+       use_backend app_invoice if url_invoice
+       acl url_pay path_beg /pay
+       use_backend app_pay if url_pay
+       acl url_transaction path_beg /transaction
+       use_backend app_transaction if url_transaction
+    
+    
+    backend config_back
+        mode http
+        balance roundrobin
+        http-request set-path "%[path,regsub(^/config/,/)]"
+        server appconfig app-config.service.consul:8888 resolvers consul resolve-prefer ipv4 check
+    
+    backend app_invoice
+        mode http
+        balance roundrobin
+        http-request set-path "%[path,regsub(^/invoice/,/)]"
+        server appinvoice app-invoice.service.consul:8006 resolvers consul resolve-prefer ipv4 check
+    
+    backend app_pay
+        mode http
+        balance roundrobin
+        http-request set-path "%[path,regsub(^/pay/,/)]"
+        server apppay app-pay.service.consul:8010 resolvers consul resolve-prefer ipv4 check
+    
+    backend app_transaction
+        mode http
+        balance roundrobin
+        http-request set-path "%[path,regsub(^/transaction/,/)]"
+        server apptran app-transaction.service.consul:8082 resolvers consul resolve-prefer ipv4 check
+    
+    resolvers consul
+        nameserver consul consul:8600
+        accepted_payload_size 8192
+        hold valid 5s
+  ```
+  ### 7.2 Build and Push Docker Image
+```bash
+docker build -t nombre-usuario/loadbalancer:1 .
+docker push nombre-usuario/loadbalancer:1
+```
+![img.png](images/loadbalancerdockerhub.png)
+
+  ### 7.3 Configuration of Gateway: gateway.config.yml
+The .yml file is needed to configure the path of the microservices from the gateway.
+  ```Dockerfile
+    http:
+      port: 8080
+    admin:
+      port: 9876
+      host: localhost
+    
+    apiEndpoints:
+      appconfig:
+        host: localhost
+        paths: [ '/config','/config/*' ]
+      appinvoice:
+        host: localhost
+        paths: [ '/invoice','/invoice/*' ]
+      apppay:
+        host: localhost
+        paths: [ '/pay','/pay/*' ]
+      apptransaction:
+        host: localhost
+        paths: [ '/transaction','/transaction/*' ]
+    
+    serviceEndpoints:
+      appconfig:
+        url: 'http://loadbalancer/config/'
+      appinvoice:
+        url: 'http://loadbalancer/invoice/'
+      apppay:
+        url: 'http://loadbalancer/pay/'
+      apptransaction:
+        url: 'http://loadbalancer/transaction/'
+    
+    policies:
+      - basic-auth
+      - cors
+      - expression
+      - key-auth
+      - log
+      - oauth2
+      - proxy
+      - rate-limit
+    pipelines:
+      default:
+        apiEndpoints:
+          - appconfig
+          - appinvoice
+          - apppay
+          - apptransaction
+        policies:
+          # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+          - key-auth:
+          - proxy:
+              - action:
+                  serviceEndpoint: appconfig
+                  changeOrigin: true
+                  prependPath: false
+                  ignorePath: false
+                  stripPath: false
+              - action:
+                  serviceEndpoint: apppay
+                  changeOrigin: true
+                  prependPath: false
+                  ignorePath: false
+                  stripPath: false
+              - action:
+                  serviceEndpoint: apptransaction
+                  changeOrigin: true
+                  prependPath: false
+                  ignorePath: false
+                  stripPath: false
+              - action:
+                  serviceEndpoint: appinvoice
+                  changeOrigin: true
+                  prependPath: false
+                  ignorePath: false
+                  stripPath: false
+  ```
+
+  ### 7.3 Build Docker-Compose
+  ```Dockerfile
+version: '3'
+
+services:
+  loadbalancer:
+    container_name: loadbalancer
+    image: daboca/loadbalancer:1
+    ports:
+      - "8000:80"
+      - "1936:1936"
+    networks:
+      - distribuidos
+
+  express-gateway-data-store:
+    container_name: express-gateway-data-store
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - distribuidos
+
+  express-gateway:
+    container_name: express-gateway
+    image: express-gateway
+    ports:
+      - "8080:8080"
+      - "9876:9876"
+    volumes:
+      - type: bind
+        source: ../appgw
+        target: /var/lib/eg
+    networks:
+      - distribuidos
+
+networks:
+  distribuidos:
+    external: true
+  ```
+
+  ## 8. Evidence of working
+  ### 8.1 Load Balancer
+Invoice
+![img_1.png](images/lbinvoice.png)
+
+Pay
+![img.png](images/lbpay.png)
+
+Transaction
+![img_2.png](images/lbtransaction.png)
+
+### 8.2 Api Gateway
+![img_4.png](images/createUser.png)
+```bash
+ curl -H "Authorization: apiKey 3iRjjwFVmMr8eW51mQj3jL:7bhxWTdEN3H3KVjzSLKTY7" http://localhost:8080/config/app-pay/dev
+```
+![img_3.png](images/apigwCurl.png)
+
+
+
 
   
     
