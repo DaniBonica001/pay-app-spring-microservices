@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e58ac9-48bb-4cd4-ac8f-0df6e36357dd" name="Changes" comment="Updated README.md with evidence">
-      <change afterPath="$PROJECT_DIR$/deploy/loadbalancer-apigw.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/loadbalancerdockerhub.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/57444651-fba5-4800-bcfe-7a9d783647da.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/57444651-fba5-4800-bcfe-7a9d783647da.xml" afterDir="false" />
+    <list default="true" id="a7e58ac9-48bb-4cd4-ac8f-0df6e36357dd" name="Changes" comment="Load balancer and api gateway">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appgw/gateway.config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/appgw/gateway.config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appgw/system.config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/appgw/system.config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/deploy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/haproxy/haproxy.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/haproxy/haproxy.cfg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +115,8 @@
       <workItem from="1707860558906" duration="937000" />
       <workItem from="1708986246990" duration="117000" />
       <workItem from="1708986371671" duration="6368000" />
-      <workItem from="1709003601910" duration="5161000" />
+      <workItem from="1709003601910" duration="5607000" />
+      <workItem from="1709054763024" duration="366000" />
     </task>
     <task id="LOCAL-00001" summary="Updated logic behind microservices to do the payment">
       <option name="closed" value="true" />
@@ -187,7 +174,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707861480073</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Load balancer and api gateway">
+      <option name="closed" value="true" />
+      <created>1709010128249</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1709010128249</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Load balancer and api gateway">
+      <option name="closed" value="true" />
+      <created>1709010277531</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709010277531</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +200,7 @@
     <MESSAGE value="Updated logic behind microservices to do the payment" />
     <MESSAGE value="Updated README.md" />
     <MESSAGE value="Updated README.md with evidence" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated README.md with evidence" />
+    <MESSAGE value="Load balancer and api gateway" />
+    <option name="LAST_COMMIT_MESSAGE" value="Load balancer and api gateway" />
   </component>
 </project>

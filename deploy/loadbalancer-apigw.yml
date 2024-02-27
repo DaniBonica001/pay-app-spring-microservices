@@ -3,7 +3,7 @@ version: '3'
 services:
   loadbalancer:
     container_name: loadbalancer
-    image: daboca/loadbalancer:1
+    image: daboca/loadbalancer:2
     ports:
       - "8000:80"
       - "1936:1936"

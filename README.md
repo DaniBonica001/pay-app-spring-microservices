@@ -334,6 +334,9 @@ networks:
 
   ## 8. Evidence of working
   ### 8.1 Load Balancer
+
+![img.png](images/loadBalancerServices.png)
+
 Invoice
 ![img_1.png](images/lbinvoice.png)
 
@@ -342,6 +345,7 @@ Pay
 
 Transaction
 ![img_2.png](images/lbtransaction.png)
+
 
 ### 8.2 Api Gateway
 ![img_4.png](images/createUser.png)
